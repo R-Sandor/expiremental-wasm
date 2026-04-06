@@ -6,12 +6,13 @@ compiler=clang
 compiler.version=17
 build_type=Release
 
-[tool_requires]
-emsdk/3.1.73
+# [tool_requires]
+# emsdk/3.1.73
 
 [conf]
 tools.cmake.cmaketoolchain:system_name=Emscripten
 tools.build:defines=["EMSCRIPTEN"]
+tools.cmake.cmaketoolchain:user_toolchain=["$ENV{EMSDK}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"]
 
 [buildenv]
 CMAKE_C_COMPILER=emcc
